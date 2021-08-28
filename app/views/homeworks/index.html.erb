@@ -1,0 +1,30 @@
+<h1>Homeworks</h1>
+
+<table class="table table-bordered
+table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homeworks.each do |homework| %>
+      <tr>
+        <td><%= homework.title %></td>
+        <td><%= homework.text %></td>
+        <td><%= homework.author %></td>
+        <td><%= link_to 'Show', homework, class:"btn btn-dark" %></td>
+        <td><%= link_to 'Edit', edit_homework_path(homework), class:"btn btn-dark" %></td>
+        <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-dark" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homework', new_homework_path, class:"btn btn-secondary" %>
