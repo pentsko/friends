@@ -4,8 +4,28 @@ class FriendsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /friends or /friends.json
   def index
-    @friends = Friend.all
+    # Полю об'єкта присвоюється результат виконання методу where, у якому передається параметром id user. Виконується запит в базу даних
+    id = current_user.id
+    # @friends = Friend.where(user_id: id) 
+    users_friends = Friend.where(user_id: id) 
+    # Змінній sorted_friends присвоюється результат виконання методу order, якому передається параметром ключ first_name (символ, це вбудований тип даних у рубі), 
+    # цей ключ представляє назву колонки по якій ми хочемо відсортувати  
+    sorted_friends = users_friends.order(:first_name)
+    # Полю об'єкта @friends присвоюєтсь значення змінної sorted_friends
+    @friends = sorted_friends
+
+
+
+
+
+
+
+#ДОМАШНЄ ЗАВДАННЯ. ОПИСАТИ ТОЙ РЯДОК ЗА ДОПОМОГОЮ ПРАВИЛЬНОЇ ТЕРМІНОЛОГІЇ
+
+# із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних                                  
+    @friends = Friend.where(user_id: current_user.id).order(:first_name)
   end
+
 
   # GET /friends/1 or /friends/1.json
   def show
