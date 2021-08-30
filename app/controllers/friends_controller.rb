@@ -21,7 +21,8 @@ class FriendsController < ApplicationController
 
 
 #ДОМАШНЄ ЗАВДАННЯ. ОПИСАТИ ТОЙ РЯДОК ЗА ДОПОМОГОЮ ПРАВИЛЬНОЇ ТЕРМІНОЛОГІЇ
-
+#Змінній стану Friend присвоюється результат виконання методу order, якій передається параметром ключ first_name,
+#отриманий з результату виконання методу where, що виконує запит в базу даних і передає id user(a). Це зв'язує стовбець first_name з id user(a)
 # із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних                                  
     @friends = Friend.where(user_id: current_user.id).order(:first_name)
   end
