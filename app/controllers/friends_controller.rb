@@ -4,37 +4,9 @@ class FriendsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /friends or /friends.json
   def index
-    # Полю об'єкта присвоюється результат виконання методу where, у якому передається параметром id user. Виконується запит в базу даних
-    id = current_user.id
-    # @friends = Friend.where(user_id: id) 
-    users_friends = Friend.where(user_id: id) 
-    # Змінній sorted_friends присвоюється результат виконання методу order, якому передається параметром ключ first_name (символ, це вбудований тип даних у рубі), 
-    # цей ключ представляє назву колонки по якій ми хочемо відсортувати  
-    sorted_friends = users_friends.order(:first_name)
-    # Полю об'єкта @friends присвоюєтсь значення змінної sorted_friends
-    @friends = sorted_friends
 
-
-
-
-
-
-
-#ДОМАШНЄ ЗАВДАННЯ. ОПИСАТИ ТОЙ РЯДОК ЗА ДОПОМОГОЮ ПРАВИЛЬНОЇ ТЕРМІНОЛОГІЇ
-#Змінній стану Friend присвоюється результат виконання методу order, якій передається параметром ключ first_name,
-#отриманий з результату виконання методу where, що виконує запит в базу даних і передає id user(a). Це зв'язує стовбець first_name з id user(a)
-# із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних  
-#
-#Полю об'єкта Friends присвоюється результат виконання методу order
-#методу order передається параметром ключ first_name
-#рядок first_name отриманий(відфільтровується) з стовбця user_id
-#дані ключа first_name отримані з результату виконання методу where
-#метод where застосовується до константи класу Friend
-#метод where робить запит в базу даних
-#метод where відфільтровує колонки user_id які відповідають значенню id об'єкта current_user 
-#
-#                                
-    @friends = Friend.where(user_id: current_user.id).order(:first_name)
+    @friends = Friend.where(user_id: current_user.id).order(email: :desc)
+   # @friends = Friend.where(user_id: current_user.id).order(facebook: :desc)
   end
 
 
@@ -106,3 +78,28 @@ class FriendsController < ApplicationController
       params.require(:friend).permit(:first_name, :last_name, :email, :phone, :facebook, :user_id)
     end
 end
+
+    # Полю об'єкта присвоюється результат виконання методу where, у якому передається параметром id user. Виконується запит в базу даних
+    #id = current_user.id
+    # @friends = Friend.where(user_id: id) 
+    #users_friends = Friend.where(user_id: id) 
+    # Змінній sorted_friends присвоюється результат виконання методу order, якому передається параметром ключ first_name (символ, це вбудований тип даних у рубі), 
+    # цей ключ представляє назву колонки по якій ми хочемо відсортувати  
+    #sorted_friends = users_friends.order(:first_name)
+    # Полю об'єкта @friends присвоюєтсь значення змінної sorted_friends
+    #@friends = sorted_friends
+#ДОМАШНЄ ЗАВДАННЯ. ОПИСАТИ ТОЙ РЯДОК ЗА ДОПОМОГОЮ ПРАВИЛЬНОЇ ТЕРМІНОЛОГІЇ
+#Змінній стану Friend присвоюється результат виконання методу order, якій передається параметром ключ first_name,
+#отриманий з результату виконання методу where, що виконує запит в базу даних і передає id user(a). Це зв'язує стовбець first_name з id user(a)
+# із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних  
+#
+#Полю об'єкта Friends присвоюється результат виконання методу order
+#методу order передається параметром ключ first_name
+#дані ключа  first_name отриманий з запису колонки user_id
+#дані ключа first_name отримані з результату виконання методу where
+#метод where застосовується до константи класу Friend
+#метод where робить запит в базу даних
+#метод where відфільтровує записи у колонці user_id котрі відповідають значенню id об'єкта current_user                               
+    #@friends = Friend.where(user_id: current_user.id).order(:first_name)
+
+
