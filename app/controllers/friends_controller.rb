@@ -3,11 +3,23 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /friends or /friends.json
+
+
+
+
   def index
 
-    @friends = Friend.where(user_id: current_user.id).order(email: :desc)
-   # @friends = Friend.where(user_id: current_user.id).order(facebook: :desc)
+    @friends = Friend.where(user_id: current_user.id).order(email:  :desc)
+    #@friends = Friend.where(user_id: current_user.id).order(facebook: :desc)
+    #@friends = Friend.where(user_id: current_user.id).order(phone: :desc)
   end
+
+
+
+
+
+
+
 
 
   # GET /friends/1 or /friends/1.json
