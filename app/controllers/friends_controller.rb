@@ -9,9 +9,9 @@ class FriendsController < ApplicationController
 
   def index
 
-    @friends = Friend.where(user_id: current_user.id).order(email:  :desc)
-    #@friends = Friend.where(user_id: current_user.id).order(facebook: :desc)
-    #@friends = Friend.where(user_id: current_user.id).order(phone: :desc)
+    #@friends = Friend.where(user_id: current_user.id).order(@key:  :desc)
+    @friends = Friend.where(user_id: current_user.id).order(params[:sort]).order(created_at: :desc)
+    #@friends = Friend.where(user_id: current_user.id).order()
   end
 
 
