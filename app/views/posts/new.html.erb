@@ -1,0 +1,24 @@
+
+
+<h1>New Post</h1>
+
+<%= form_with model: @posts do |p| %>
+
+<div><%= p.label :title %>
+<%= p.text_field :title, required: true, minlength: 3, placeholder: "title" %> 
+</div>
+<br>
+<div>
+<%= p.label :body %>
+<%= p.text_area :body, requirek: true, minlength: 2, placeholder: "Yor text" %>
+</div>
+<br>
+<div>
+<%= p.label :author %>
+<%= p.text_field :author, requred: true, minlengyh: 3, placeholder: "Creator" %>
+</div>
+<br>
+<%= p.submit "Submit post" %>
+<% end %>
+
+<%= link_to "New post", new_post_path %>

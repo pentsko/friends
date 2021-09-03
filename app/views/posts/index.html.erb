@@ -1,0 +1,13 @@
+<h1>Posts</h1>
+
+
+<% @posts.each do |p| %>
+<h2><%= p.title%></h2>
+
+<p>
+	<%= p.body %>
+</p>
+
+<h2><%= p.author %></h2>
+<% end %>
+<%= link_to "New post", new_post_path %>
