@@ -1,0 +1,22 @@
+
+<%= form_with(model: @post, local: true) do |p| %>
+
+
+<div class="field form-group">
+<%= p.text_field :title, required: true, minlength: 3, placeholder: "title", class:"form-control" %> 
+</div>
+<br>
+<div class="field form-group">
+
+<%= p.text_area :body, requirek: true, minlength: 2, placeholder: "Yor text", class:"form-control" %>
+</div>
+<br>
+<div class="field form-group">
+
+<%= p.text_field :author, requred: true, minlengyh: 3, placeholder: "Creator", class:"form-control" %>
+</div>
+<br>
+<div class="actions">
+<%= p.submit "Submit post", class:"btn btn-outline-dark" %>
+</div>
+<% end %>
