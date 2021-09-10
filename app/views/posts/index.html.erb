@@ -1,0 +1,28 @@
+<h1>Posts</h1>
+
+
+<% @posts.each do |p| %>
+
+<h2><%= p.title%></h2>
+
+<p>
+	<%= p.body %>
+</p>
+
+<h2><%= p.author %></h2>
+
+<% if user_signed_in? %>
+
+
+
+
+<%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %>
+<%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %>
+
+<% end %>
+
+<%= link_to "New post", new_post_path, class:"btn btn-dark" %>
+<% else %>
+<h2>Please authenticate fo do something with posts</h2>
+
+<% end %>
