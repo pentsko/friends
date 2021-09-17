@@ -21,10 +21,13 @@ class FriendsController < ApplicationController
     @friends = current_user.friends
 
   end
-  
-  
 
+  def destroy
+    @user = User.find_by id: params[:id]
+    @user.destroy
+    redirect_to friends_list_path
 
+  end
     
 end
 

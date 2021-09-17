@@ -3,5 +3,6 @@
 <div>
 <%= friend.email %>
 <%= friend.name %>
+<%= link_to "Delete", friend_path(friend), data: {method: :delete, confirm: "You really want this?"}, class: "btn btn-danger" %>
 </div>
 <% end %>
