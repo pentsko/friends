@@ -1,0 +1,133 @@
+[33mcommit fe0c4856d07d13fae3b4b4e6d7103a14dadb9f15[m[33m ([m[1;36mHEAD[m[33m, [m[1;32mconnections[m[33m)[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 17 06:47:54 2021 +0300
+
+    Add function add and show users friends
+
+[33mcommit eec759d2a6a6e04a3ac8ab7f268043ea29251d18[m[33m ([m[1;31morigin/connections[m[33m)[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Wed Sep 15 20:24:48 2021 +0300
+
+    try to make connections
+
+[33mcommit 4d14e9cc61af790a68e5ea00aa2c0772660e4321[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Wed Sep 15 07:28:40 2021 +0300
+
+    can't add ralations to friends
+
+[33mcommit 3ff47705ddd2dd3bb539622009c72a3e8b4d3632[m
+Merge: 0f250e3 4b88ce7
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 21:54:22 2021 +0300
+
+    Merge branch 'master' into connections
+
+[33mcommit 0f250e3aa4321af04a9bd87ba944026209ef7ab5[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 21:47:51 2021 +0300
+
+    Creating connection model
+
+[33mcommit 4b88ce73d5d2cdf2673b61eae271f680be0509e8[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 8dfa0d9 e361165
+Author: Oleg Lazaryev <olegl.info@gmail.com>
+Date:   Fri Sep 10 20:57:24 2021 +0300
+
+    Merge pull request #2 from pentsko/creating_post
+    
+    Creating post
+
+[33mcommit e36116567456b2f99846d8793e8fe39479a13437[m[33m ([m[1;31morigin/creating_post[m[33m, [m[1;32mcreating_post[m[33m)[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 20:54:33 2021 +0300
+
+    add to gitignore idea
+
+[33mcommit 445b327ee8e554c80eac958c39bc5799258b5c7c[m
+Merge: 79a0ef6 8dfa0d9
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 20:52:19 2021 +0300
+
+    Merge branch 'master' into creating_post
+
+[33mcommit 8dfa0d92fb22b7603c060943cfa108dcba1213ee[m
+Merge: d4c1c91 bae9955
+Author: Oleg Lazaryev <olegl.info@gmail.com>
+Date:   Fri Sep 10 20:48:09 2021 +0300
+
+    Merge pull request #1 from pentsko/reading_code
+    
+    Reading code
+
+[33mcommit bae99552d14055378c60b6443733f3cfc3460715[m[33m ([m[1;31morigin/reading_code[m[33m, [m[1;32mreading_code[m[33m)[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 20:47:08 2021 +0300
+
+    cleaning branch
+
+[33mcommit 79a0ef64d9d9111075423b4a3adc3f1b2eec9a30[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 10 07:53:47 2021 +0300
+
+    show all posts in main page, but can't do edit without authorization
+
+[33mcommit c15bbc238dfd8a12166b833473bbb9c8629b8fd7[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Sat Sep 4 09:10:20 2021 +0300
+
+    working all CRUD work
+
+[33mcommit b808e0def90f67e746d5e913dbfb999e2b20123d[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 3 07:43:30 2021 +0300
+
+    showing and add form for new post
+
+[33mcommit 59d59d77a2521ccfacb70947c2ecaf556fe437c4[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Fri Sep 3 05:31:53 2021 +0300
+
+    final reading file
+
+[33mcommit 9dba72885f3123d426d870423ab444e135449f37[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Thu Sep 2 06:51:29 2021 +0300
+
+    Ordering columns
+
+[33mcommit b98f76ef4fba71e935470301057796427ea338d3[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Wed Sep 1 19:56:29 2021 +0300
+
+    Order onle one element
+
+[33mcommit c4926a2756b7e9ad25a1089d65c2b569a76b0950[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Wed Sep 1 07:47:23 2021 +0300
+
+    ordering elements, but need to add common variable
+
+[33mcommit 0d5a70b900bb78612758218435331d6ebc37faed[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Tue Aug 31 06:42:23 2021 +0300
+
+    reading code, line by line
+
+[33mcommit 468271aeee2974f02799c4bf8ba76d5b3df34114[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Mon Aug 30 06:42:08 2021 +0300
+
+    Reading code
+
+[33mcommit e6d1c3fe0ea028198d07a23fd739348befa54694[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Sun Aug 29 10:09:35 2021 +0300
+
+    trying reading method in function
+
+[33mcommit d4c1c9154f8fcc4c247d2247210186c614ac1d2b[m
+Author: Taras <pentsko.t@gmail.com>
+Date:   Sat Aug 28 16:41:17 2021 +0300
+
+    Initial commit
