@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :homeworks
-  resources :friends
+  resources :friends, only: [:create]
   resources :posts
+  get 'friends/users', to: 'friends#users'
+  get 'friends_list', to: 'friends#list_friends'
   get 'home/about'
   get 'home/contacts'
   get '/posts', to: 'posts#index'

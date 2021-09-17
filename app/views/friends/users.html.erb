@@ -1,0 +1,12 @@
+
+
+<% @users.each do |u| %>
+	<div>
+		<%= u.email %>
+		<%= form_for :friend, url: friends_path, method: :post do |form| %>
+			<%= hidden_field_tag :friend_id, u.id%>
+			<%= form.submit "Add friend" %>
+		<% end %>
+	</div>
+
+<% end %>

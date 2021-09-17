@@ -5,6 +5,10 @@ class HomeController < ApplicationController
   end
 
   def index
+    @user = User.find(1)
+    #Метод friends результатом свого виконання повертає масив користувачів який представляє друзів того юзера до якого ми цей метод викликали
+    #Асоціація friends повертає масив користувачів який представляє друзів того юзера
+    @friends = @user.friends
   end
 
   def contacts
