@@ -1,8 +1,22 @@
+<table class="table table-dark table-striped">
+	  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
 
 <% @friends.each do |friend| %>
-<div>
-<%= friend.email %>
-<%= friend.name %>
-<%= link_to "Delete", friend_path(friend), data: {method: :delete, confirm: "You really want this?"}, class: "btn btn-danger" %>
-</div>
+<tr>
+	<td><%= friend.name %></td>
+	<td><%= friend.email %></td>
+
+	<td><%= link_to "Delete", friend_path(friend), data: {method: :delete,confirm: "You really want this?"}, class: "btn btn-danger" %></td>
+</tr>
 <% end %>
+  </tbody> 
+</table>

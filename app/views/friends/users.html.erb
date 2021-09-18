@@ -1,13 +1,25 @@
+<table class="table table-bordered
+table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
+  <tbody>
 
 <% @users.each do |u| %>
-	<div>
-		<%= u.email %>
-		<%= u.name %>
-		<%= form_for :friend, url: friends_path, method: :post do |form| %>
+	<tr>
+		<td><h4><%= u.name %></h4></td>
+		<td><%= u.email %></td>
+	
+			<%= form_for :friend, url: friends_path, method: :post do |form| %>
 			<%= hidden_field_tag :friend_id, u.id%>
-			<%= form.submit "Add friend" %>
+		<td><%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
 		<% end %>
-	</div>
-
-<% end %>
+	</tr>
+	<% end %>
+   </tbody>
+</table>
