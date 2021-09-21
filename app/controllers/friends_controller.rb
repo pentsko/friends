@@ -2,31 +2,54 @@ class FriendsController < ApplicationController
    before_action :authenticate_user!, except: [:show]
 
 
-
+# 1)ДЗ повинно показувати add friends тільки тих кого у мене ще немає в друзях
+# https://guides.rubyonrails.org/active_record_querying.html#conditions
+# https://guides.rubyonrails.org/active_record_querying.html#joining-tables - там є ключ
+# 2) додати асоціацію між постами і юзерами(один користувач може мати багато постів, пост належить одному користувачу)
+# 3)додати сторінку "мої пости" на якій відображатимуться пости які належать поточному залогованому юзеру(сторіно для створ і видалення поста покищо не потрібно)
+# створювати пости в консолі покищо
   def users
     @users = User.all
   end
+
 
   def create
     puts "See params"
     puts "----------------"
     puts params.inspect
     puts "--------"
-    current_user.friends << User.find(params[:friend_id])
+    id = params[:godzilla_id]
+    friend = User.find(id)
+    current_user.friends << friend
     # Парамс поверне значення для ключа friend_id, яке буде ід юзера якого ми хочим додати в друзі
     redirect_to friends_list_path
   end
 
+
   def list_friends
+
     @friends = current_user.friends
 
   end
 
   def destroy
-    @user = User.find_by id: params[:id]
-    @user.destroy
+    puts "See params"
+    puts "----------------"
+    
+    puts params.inspect
+        puts "--------"
+        id = params[:gorilla_id]
+    friend = User.find(id)
+    current_user.friends.destroy(friend)
+    # @connection = Connection.current_user.friends.find_by friend_id: params[:connection_id]
+    # @connection = Connection.current_user.find_by user_id: params[:connection_id]
+    # @connection.destroy
     redirect_to friends_list_path
 
+  end
+
+  def delete_friendship
+    
   end
     
 end

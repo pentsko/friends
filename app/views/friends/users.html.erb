@@ -1,4 +1,27 @@
-<table class="table table-bordered
+
+
+
+
+<% @users.each do |u| %>
+	
+		<div>
+		<%= u.name %>
+		<%= u.email %>
+
+	
+			<%= form_for :friend, url: friends_path, method: :post do |form| %>
+			<%= hidden_field_tag :godzilla_id, u.id %>
+			<!-- #hidden_field_tag дає можливість присвоїти ім'я ключу який буде вказувати на значення id' -->
+
+		<%= form.submit "Add friend", class: "btn btn-outline-dark" %>
+		<% end %>
+		</div>
+	
+	<% end %>
+
+
+
+ <table class="table table-bordered
 table-hover">
   <thead class="table-dark">
     <tr>
@@ -7,19 +30,17 @@ table-hover">
       <th colspan="2"></th>
     </tr>
   </thead>
-
-  <tbody>
-
-<% @users.each do |u| %>
-	<tr>
-		<td><h4><%= u.name %></h4></td>
-		<td><%= u.email %></td>
-	
-			<%= form_for :friend, url: friends_path, method: :post do |form| %>
-			<%= hidden_field_tag :friend_id, u.id%>
-		<td><%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
-		<% end %>
-	</tr>
-	<% end %>
-   </tbody>
+<tbody>
+  </tbody>
 </table>
+
+ 
+ 
+<tr>
+<td><h4>
+</h4></td>
+<td>
+</td>
+<td>
+</td>
+</tr>
