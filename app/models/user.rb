@@ -8,4 +8,6 @@ class User < ApplicationRecord
 # has_many :connections
 #  has_many :friends, throught: :connection
 # validates :name, :uniqueness
+has_many :posts
+
 end
