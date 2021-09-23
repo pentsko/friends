@@ -18,7 +18,7 @@ class FriendsController < ApplicationController
     puts "----------------"
     puts params.inspect
     puts "--------"
-    id = params[:godzilla_id]
+    id = params[:godzilla2_id]
     friend = User.find(id)
     current_user.friends << friend
     # Парамс поверне значення для ключа friend_id, яке буде ід юзера якого ми хочим додати в друзі
@@ -38,7 +38,7 @@ class FriendsController < ApplicationController
     
     puts params.inspect
         puts "--------"
-        id = params[:gorilla_id]
+        id = params[:destroy_id]
     friend = User.find(id)
     current_user.friends.destroy(friend)
     # @connection = Connection.current_user.friends.find_by friend_id: params[:connection_id]

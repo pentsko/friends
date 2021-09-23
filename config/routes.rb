@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'
-  delete 'friends/:gorilla_id', to: 'friends#destroy'
+  delete 'friends/:destroy_id', to: 'friends#destroy'
   get 'home/about'
   get 'home/contacts'
   get '/posts', to: 'posts#index'
