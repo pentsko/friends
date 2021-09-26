@@ -1,5 +1,6 @@
-<h1>Posts</h1>
+<h1>MY Posts</h1>
 
+<% if user_signed_in? %>
 
 <% @posts.each do |p| %>
 
@@ -10,9 +11,6 @@
 </p>
 
 <h2><%= p.author %></h2>
-
-<% if user_signed_in? %>
-
 
 
 

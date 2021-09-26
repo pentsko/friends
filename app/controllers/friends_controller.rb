@@ -41,17 +41,11 @@ class FriendsController < ApplicationController
         id = params[:destroy_id]
     friend = User.find(id)
     current_user.friends.destroy(friend)
-    # @connection = Connection.current_user.friends.find_by friend_id: params[:connection_id]
-    # @connection = Connection.current_user.find_by user_id: params[:connection_id]
-    # @connection.destroy
     redirect_to friends_list_path
 
   end
 
-  def delete_friendship
-    
-  end
-    
+      
 end
 
     # Полю об'єкта присвоюється результат виконання методу where, у якому передається параметром id user. Виконується запит в базу даних
