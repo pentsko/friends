@@ -3,50 +3,30 @@
 
 
 <% @users.each do |u| %>
-	
+
 		<div>
 		<%= u.name %>
 		<%= u.email %>
-		
+
 			<%= form_for :friend, url: friends_path, method: :post do |form| %>
 			<%= hidden_field_tag :godzilla2_id, u.id %>
 			<!-- #hidden_field_tag дає можливість присвоїти ім'я ключу який буде вказувати на значення id' -->
+
+			<!-- if !current_user.friendships.where(friend_id: @user.id).exists?  -->
+
+
 				<% if current_user.friends.ids.include?(u.id) %>
-			<%= "You allready have him in friends" %>
+			<% "You allready have him in friends" %>
 				<% else %>
 			<%= form.submit "Add friend", class: "btn btn-outline-dark" %>
-	
-		
+
+
 				<% end %>
-			
+
 			<% end %>
 		</div>
-	
+
 	<% end %>
 
 
-
- <table class="table table-bordered
-table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-<tbody>
-  </tbody>
-</table>
-
- 
- 
-<tr>
-<td><h4>
-</h4></td>
-<td>
-</td>
-<td>
-</td>
-</tr>
 

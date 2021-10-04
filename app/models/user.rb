@@ -3,11 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  scope :all_except,
+        ->(user) { where.not(id: user) && where.not(id: user.friends.map(&:id))}
 
   has_and_belongs_to_many :friends, class_name: "User", join_table: :connections, association_foreign_key: :friend_id
 # has_many :connections
 #  has_many :friends, throught: :connection
-# validates :name, :uniqueness
+# validates :user_id, uniqueness: {scope: :friend_id}
 has_many :posts
 
 end

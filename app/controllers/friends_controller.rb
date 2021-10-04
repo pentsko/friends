@@ -2,14 +2,21 @@ class FriendsController < ApplicationController
    before_action :authenticate_user!, except: [:show]
 
 
-# 1)ДЗ повинно показувати add friends тільки тих кого у мене ще немає в друзях
+# 1)ДЗ повинно ПОКАЗУВАТИ СПИСОК add friends тільки тих кого у мене ще немає в друзях
 # https://guides.rubyonrails.org/active_record_querying.html#conditions
 # https://guides.rubyonrails.org/active_record_querying.html#joining-tables - там є ключ
 # 2) додати асоціацію між постами і юзерами(один користувач може мати багато постів, пост належить одному користувачу)
 # 3)додати сторінку "мої пости" на якій відображатимуться пости які належать поточному залогованому юзеру(сторіно для створ і видалення поста покищо не потрібно)
 # створювати пости в консолі покищо
+# 4) Розібратись з JOIN
+# 5) Пройти тестування у SoftServe
+# 6) Дослідити "Форми у html"
+
   def users
-    @users = User.all
+   @users = User.all_except(current_user)
+
+
+
   end
 
 
@@ -30,12 +37,13 @@ class FriendsController < ApplicationController
 
     @friends = current_user.friends
 
+
   end
 
   def destroy
     puts "See params"
     puts "----------------"
-    
+
     puts params.inspect
         puts "--------"
         id = params[:destroy_id]
@@ -45,22 +53,22 @@ class FriendsController < ApplicationController
 
   end
 
-      
+
 end
 
     # Полю об'єкта присвоюється результат виконання методу where, у якому передається параметром id user. Виконується запит в базу даних
     #id = current_user.id
-    # @friends = Friend.where(user_id: id) 
-    #users_friends = Friend.where(user_id: id) 
-    # Змінній sorted_friends присвоюється результат виконання методу order, якому передається параметром ключ first_name (символ, це вбудований тип даних у рубі), 
-    # цей ключ представляє назву колонки по якій ми хочемо відсортувати  
+    # @friends = Friend.where(user_id: id)
+    #users_friends = Friend.where(user_id: id)
+    # Змінній sorted_friends присвоюється результат виконання методу order, якому передається параметром ключ first_name (символ, це вбудований тип даних у рубі),
+    # цей ключ представляє назву колонки по якій ми хочемо відсортувати
     #sorted_friends = users_friends.order(:first_name)
     # Полю об'єкта @friends присвоюєтсь значення змінної sorted_friends
     #@friends = sorted_friends
 #ДОМАШНЄ ЗАВДАННЯ. ОПИСАТИ ТОЙ РЯДОК ЗА ДОПОМОГОЮ ПРАВИЛЬНОЇ ТЕРМІНОЛОГІЇ
 #Змінній стану Friend присвоюється результат виконання методу order, якій передається параметром ключ first_name,
 #отриманий з результату виконання методу where, що виконує запит в базу даних і передає id user(a). Це зв'язує стовбець first_name з id user(a)
-# із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних  
+# із результату виконання методу where, що предав параметром id usera, виконуючи запит в базу даних
 #
 #Полю об'єкта Friends присвоюється результат виконання методу order
 #методу order передається параметром ключ first_name
@@ -68,7 +76,7 @@ end
 #дані ключа first_name отримані з результату виконання методу where
 #метод where застосовується до константи класу Friend
 #метод where робить запит в базу даних
-#метод where відфільтровує записи у колонці user_id котрі відповідають значенню id об'єкта current_user                               
+#метод where відфільтровує записи у колонці user_id котрі відповідають значенню id об'єкта current_user
     #@friends = Friend.where(user_id: current_user.id).order(:first_name)
 
 
