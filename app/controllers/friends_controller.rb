@@ -14,9 +14,6 @@ class FriendsController < ApplicationController
 
   def users
    @users = User.all_except(current_user)
-
-
-
   end
 
 
@@ -34,10 +31,7 @@ class FriendsController < ApplicationController
 
 
   def list_friends
-
     @friends = current_user.friends
-
-
   end
 
   def destroy
@@ -52,7 +46,6 @@ class FriendsController < ApplicationController
     redirect_to friends_list_path
 
   end
-
 
 end
 
