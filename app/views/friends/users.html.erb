@@ -5,12 +5,8 @@
 		<%= u.email %>
 			<%= form_for :friend, url: friends_path, method: :post do |form| %>
 			<%= hidden_field_tag :godzilla2_id, u.id %>
-				<% if current_user.friends.ids.include?(u.id) %>
-			<% "You allready have him in friends" %>
-				<% else %>
-			<%= form.submit "Add friend", class: "btn btn-outline-dark" %>
-				<% end %>
-			<% end %>
+					<%= form.submit "Add friend", class: "btn btn-outline-dark" %>
+      <% end %>
 		</div>
 	<% end %>
 
