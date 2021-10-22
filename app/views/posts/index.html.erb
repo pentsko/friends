@@ -7,6 +7,7 @@
     <th scope="col"><%= "Name" %></th>
     <th scope="col"><%= "Text" %></th>
     <th scope="col"><%= "Author" %></th>
+    <th colspan="5"></th>
   </tr>
   </thead>
   <tbody>
@@ -15,13 +16,14 @@
       <td><%= p.title%></td>
       <td><%= p.body %></td>
       <td><%= p.author %></td>
-<td><%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %></td> 
-<td><%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %></td>
+<td><%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %>
+<%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %></td>
     </tr>
 <% end %>
   </tbody>
   </table>
 <br>
 <%= link_to "New post", new_post_path, class:"btn btn-dark" %>
+
 
 

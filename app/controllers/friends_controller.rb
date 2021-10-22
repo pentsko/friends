@@ -1,17 +1,6 @@
 class FriendsController < ApplicationController
    before_action :authenticate_user!, except: [:show]
 
-
-# 1)ДЗ повинно ПОКАЗУВАТИ СПИСОК add friends тільки тих кого у мене ще немає в друзях
-# https://guides.rubyonrails.org/active_record_querying.html#conditions
-# https://guides.rubyonrails.org/active_record_querying.html#joining-tables - там є ключ
-# 2) додати асоціацію між постами і юзерами(один користувач може мати багато постів, пост належить одному користувачу)
-# 3)додати сторінку "мої пости" на якій відображатимуться пости які належать поточному залогованому юзеру(сторіно для створ і видалення поста покищо не потрібно)
-# створювати пости в консолі покищо
-# 4) Розібратись з JOIN
-# 5) Пройти тестування у SoftServe
-# 6) Дослідити "Форми у html"
-
   def users
    @users = User.all_except(current_user)
   end
