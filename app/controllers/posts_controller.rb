@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		@posts = current_user.posts
+		@posts = Post.where(:user_id => current_user.id)
 	end
 
 	def all_posts

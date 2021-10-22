@@ -1,26 +1,27 @@
 <h1>MY Posts</h1>
 
-<% if user_signed_in? %>
+<table class="table table-striped">
 
-<% @posts.each do |p| %>
-
-<h2><%= p.title%></h2>
-
-<p>
-	<%= p.body %>
-</p>
-
-<h2><%= p.author %></h2>
-
-
-
-<%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %>
-<%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %>
-
+  <thead>
+  <tr>
+    <th scope="col"><%= "Name" %></th>
+    <th scope="col"><%= "Text" %></th>
+    <th scope="col"><%= "Author" %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% @posts.each do |p| %>
+      <td><%= p.title%></td>
+      <td><%= p.body %></td>
+      <td><%= p.author %></td>
+<td><%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %></td> 
+<td><%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %></td>
+    </tr>
 <% end %>
-
+  </tbody>
+  </table>
+<br>
 <%= link_to "New post", new_post_path, class:"btn btn-dark" %>
-<% else %>
-<h2>Please authenticate fo do something with posts</h2>
 
-<% end %>
+
