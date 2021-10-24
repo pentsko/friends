@@ -24,6 +24,10 @@ class PostsController < ApplicationController
 		@posts = Post.where(:user_id => current_user.id)
 	end
 
+	def show
+		@post = Post.find_by id: params[:id]
+	end
+
 	def all_posts
 		@posts = Post.all
 	end

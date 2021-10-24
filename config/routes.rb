@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'
+
   delete 'friends/:destroy_id', to: 'friends#destroy'
   get 'home/about'
   get 'home/contacts'
   get 'posts/all_posts', to: 'posts#all_posts'
-  # get 'all_users', to: 'friends#all_users'
+  get '/posts/:id', to: 'posts#show'
 
   root 'home#index'
 
