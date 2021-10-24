@@ -5,6 +5,10 @@ class FriendsController < ApplicationController
    @users = User.all_except(current_user)
   end
 
+   # def all_users
+   #   @users = User.all
+   # end
+
 
   def create
     puts "See params"
@@ -24,12 +28,7 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    puts "See params"
-    puts "----------------"
-
-    puts params.inspect
-        puts "--------"
-        id = params[:destroy_id]
+    id = params[:destroy_id]
     friend = User.find(id)
     current_user.friends.destroy(friend)
     redirect_to friends_list_path

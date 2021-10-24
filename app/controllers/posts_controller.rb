@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user!, except: [:index, :all_posts]
 
 	def edit
 		@post = Post.find_by id: params[:id]
