@@ -1,11 +1,25 @@
-<form action="<%= post_comments_path(post) %>">
-  <input type="hidden" name="authenticity_token">
+<!--<form action="<%#= post_comments_path(post) %>" method="post">-->
+<!--  <input  type="hidden" name="authenticity_token">-->
 
 
-  <textarea name="comment[content]" rows="6" cols="20"></textarea>
-  <input type="submit" value="Submit">
-</form>
+<!--  <textarea name="comment[content]" rows="6" cols="20"></textarea>-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form>-->
 
-<%#= form_with model: comment, post_comments_path(post) do |form| %>
-<%#= form.body %>
-<%# end %>
+
+<%= form_with scope: :comment, url: post_comments_path(post) do |p| %>
+
+
+
+
+  <div class="field form-group">
+
+    <%= p.text_area :content, minlength: 2, placeholder: "Yor text", class:"form-control" %>
+  </div>
+
+
+  <br>
+  <div class="actions">
+    <%= p.submit "Submit post", class:"btn btn-outline-dark" %>
+  </div>
+<% end %>
