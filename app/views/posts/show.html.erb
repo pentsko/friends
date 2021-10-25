@@ -1,16 +1,12 @@
-<table class="table table-white table-striped">
-  <thead>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row"> <strong>Title:</strong>
-    <td><%= @post.title %>
-    </td>
-    </th>
-  <tr>
-    <th scope="row"> <strong>Text of post:</strong>
-    <td><%= @post.body %></td>
-    </th>
-  </tr>
-  </tbody>
-</table>
+<p id="notice"><%= notice %></p>
+<p> <strong>Title: </strong>
+    <%=  @post.title %></p>
+   <p> <strong>Discription: </strong>
+
+    <%= @post.body %></p>
+<p>
+  <strong>Comments:</strong>
+  <%= render @post.comments %>
+  <%= render partial: 'comments/form', locals: { post: @post } %>
+</p>
+

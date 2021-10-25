@@ -1,0 +1,11 @@
+<form action="<%= post_comments_path(post) %>">
+  <input type="hidden" name="authenticity_token">
+
+
+  <textarea name="comment[content]" rows="6" cols="20"></textarea>
+  <input type="submit" value="Submit">
+</form>
+
+<%#= form_with model: comment, post_comments_path(post) do |form| %>
+<%#= form.body %>
+<%# end %>
