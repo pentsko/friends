@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#show'
 
 
+
   delete 'friends/:destroy_id', to: 'friends#destroy'
   get 'home/about'
   get 'home/contacts'

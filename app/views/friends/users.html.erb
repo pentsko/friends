@@ -11,11 +11,11 @@
   <% @users.each do |u| %>
     <tr>
       <td><%= u.name %></td>
-      <td><%= u.email %></td>
-
+      <td><%= link_to u.email %></td>
       <td><%= form_for :friend, url: friends_path, method: :post do |form| %>
 			    <%= hidden_field_tag :godzilla2_id, u.id %>
           <%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
+
 
           <% end %>
 	<% end %>

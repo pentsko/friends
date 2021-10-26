@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    #Create a new comment
-    # for the post the current user
-    @comment = current_user.comments.new(comment_params)
+      @comment = current_user.comments.new(comment_params)
     if !@comment.save
       flash[:notice] = @comment.errors.full_messages.to_sentence
     end
@@ -12,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
   def comment_params
     params
       .require(:comment)

@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 20211024111243) do
     t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
-  create_table "homeworks", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.string "author"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
