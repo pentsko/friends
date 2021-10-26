@@ -1,5 +1,12 @@
-<article>
-  <p><%= comment.content %></p>
-  <small>by <%= comment.user.email %></small>
-  </article>
-<hr />
+<table class="table table-striped table-hover table-bordered" >
+  <thead>
+  <tr>
+    <th scope="col"><small>by <%= comment.user.email %></small></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+        <td class="table table-dark"><%= comment.content %></td>
+      </tr>
+    </tbody>
+</table>
