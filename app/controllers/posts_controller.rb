@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :all_posts]
 
+
 	def edit
 		@post = Post.find_by id: params[:id]
 	end
@@ -13,6 +14,8 @@ class PostsController < ApplicationController
 			render :edit
 		end
 	end
+
+
 
 	def destroy
 		@post = Post.find_by id: params[:id]
@@ -45,6 +48,9 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def search
+		@posts = Post.where("title LIKE ?","%"+params[:q]+"%")
+	end
 	private
 
 	def post_params

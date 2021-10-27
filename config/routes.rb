@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'home/contacts'
   get 'posts/all_posts', to: 'posts#all_posts'
   get '/posts/:id', to: 'posts#show'
+  get 'search', to: 'posts#search'
 
   root 'home#index'
 
