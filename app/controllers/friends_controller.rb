@@ -24,4 +24,8 @@ class FriendsController < ApplicationController
     redirect_to friends_list_path
   end
 
+   def sign_up_params
+     perams.require(:user).permit(:email,:password_confirmation,:firstname,:lastname,:date_of_birth)
+   end
+
 end

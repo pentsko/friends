@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :homeworks
-  resources :friends, only: [:create]
+  resources :friends, only: [:create, :edit]
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'
   get 'posts/all_posts', to: 'posts#all_posts'

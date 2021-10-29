@@ -1,4 +1,4 @@
-<%= form_with(model: friend, url: friends_path, local: true) do |form| %>
+<%= form_with(model: friend, url: edit_friends_path, local: true) do |form| %>
   <% if friend.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
@@ -29,13 +29,7 @@
   </div>
 <br>
 
-  <div class="field form-group">
-
-    <%= form.text_field :phone, id: :friend_phone, class:"form-control", placeholder:"Phone" %>
-  </div>
-<br>
-
-  <div class="field form-group">
+     <div class="field form-group">
     <%= form.text_field :facebook, id: :friend_facebook, class:"form-control", placeholder:"Facebook" %>
   </div>
   <br>
