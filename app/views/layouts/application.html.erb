@@ -17,8 +17,15 @@
   <body>
 
     <%= render 'home/header' %>
+    <% if current_user %>
+    <p>
+    <h4> <%= current_user.firstname + " " + current_user.lastname%></h4>
+    </p>
+  <% end %>
+
     <div class="container">
       <br>
+
    <% if notice %>
    <%= render 'layouts/allerts' %>
    <% end %>
