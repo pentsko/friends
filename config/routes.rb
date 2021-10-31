@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  resources :homeworks
+
   resources :friends, only: [:create, :edit]
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'

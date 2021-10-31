@@ -5,6 +5,7 @@
   <li class="nav-item"><%= link_to 'My Posts', posts_path, class:"nav-link" %></li>
   <li class="nav-item"><%= link_to 'Users', "/friends/users", class:"nav-link" %></li>
   <li class="nav-item"><%= link_to 'My friends', "/friends_list", class:"nav-link" %></li>
+  <li class="nav-item"><%= link_to 'Edit', "/users/edit", class:"nav-link" %></li>
   <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link"%></li>
 <% else %>
     <li class="nav-item"><%= link_to 'About us', home_about_path, class:"nav-link" %></li>
