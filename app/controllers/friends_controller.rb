@@ -6,9 +6,7 @@ class FriendsController < ApplicationController
   end
 
   def create
-     id = params[:godzilla2_id]
-    friend = User.find(id)
-    current_user.friends << friend
+    current_user.friends << User.find(params[:friend_id])
     redirect_to friends_list_path
   end
 
@@ -18,9 +16,7 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    id = params[:destroy_id]
-    friend = User.find(id)
-    current_user.friends.destroy(friend)
+       current_user.friends.destroy(User.find(params[:destroy_id]))
     redirect_to friends_list_path
   end
 

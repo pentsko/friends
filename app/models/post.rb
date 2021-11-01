@@ -4,4 +4,5 @@ class Post < ApplicationRecord
 	validates :author, presence: true, length: {minimum: 2}
 	belongs_to :user
 	has_many :comments
+	has_many :likes
 end

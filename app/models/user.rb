@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_and_belongs_to_many :friends, class_name: "User", join_table: :connections, association_foreign_key: :friend_id
   has_many :posts
   has_many :comments
+  has_many :likes
 
 end

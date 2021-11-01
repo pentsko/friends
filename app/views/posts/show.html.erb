@@ -5,6 +5,24 @@
    <p> <strong>Discription: </strong>
 
     <%= @post.body %></p>
+<%= @post.likes.count %> Likes
+<% like = current_user.likes.find_by(post: @post) %>
+<% if like.nil? %>
+  <%= button_to "Like", likes_path, params: { like: { post_id: @post.id }}, method: :post %>
+<!--<form action="/likes" method="post">-->
+<!--  <input type="hidden" name="authenticity_token" value="<%#= form_authenticity_token %>">-->
+<!--  <input type="hidden" name="like[post_id]" value="<%#= @post.id %>">-->
+<!--  <input type="submit" value="Like">-->
+<!--</form>-->
+  <% else %>
+  <%= button_to "Unlike", like_path(like), method: :delete %>
+<!--  <form action="<%#= like_path(like) %>" method="post" >-->
+<!--  <input type="hidden" name="authenticity_token" value="<%#= form_authenticity_token %>">-->
+<!--  <input type="hidden" name="_method" value="DELETE">-->
+<!--  <input type="submit" value="Unlike">-->
+<!--  </form>-->
+  <% end %>
+
 <p>
   <strong>Comments:</strong>
   <%= render @post.comments.order(id: :asc) %>
