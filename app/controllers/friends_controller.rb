@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
    before_action :authenticate_user!, except: [:show]
 
   def users
-   @users = User.all_except(current_user)
+   @users = User.all_except(current_user).page(params[:page])
   end
 
   def create
@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
 
 
   def list_friends
-    @friends = current_user.friends
+    @friends = current_user.friends.page(params[:page])
   end
 
   def destroy
