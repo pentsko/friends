@@ -15,37 +15,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-<main>
-  <header>
-    <%= render 'home/header' %></header>
-    <% if current_user %>
-    <p>
-    <h4> It`s page of <%= current_user.firstname + " " + current_user.lastname%></h4>
-    </p>
-  <% end %>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <main>
+    <header><%= render partial: 'home/header' %></header>
+    <main>
 
     <div class="container">
-      <br>
+      <% if notice %>
+        <%= render 'layouts/allerts' %>
+      <% end %>
+      <%= yield %>
+    </div>
+    </main>
 
-   <% if notice %>
-   <%= render 'layouts/allerts' %>
-   <% end %>
-
-
-    <main><%= yield %></main>
-</div>
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>-->
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    -->
-</main>
-
-  <%= render 'layouts/footer' %>
-  <% debug(params) if Rails.env.development? %>
+    <footer>
+      <p> Copyright &copy; 2021 Coding Journey</p>
+      <a href="#top">Back to top</a>
+    </footer>
 
 
+    <%#= render partial: 'layouts/footer' %>
+    <%# debug(params) if Rails.env.development? %>
   </body>
 </html>
