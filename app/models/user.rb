@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  validates :email, presence: true, length: {minimum: 3}
+  validates :firstname, presence: true, length: {minimum: 3}
+  validates :lastname, presence: true, length: {minimum: 3}
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   scope :all_except,

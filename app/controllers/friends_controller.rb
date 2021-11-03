@@ -2,13 +2,13 @@ class FriendsController < ApplicationController
    before_action :authenticate_user!, except: [:show]
 
    def new
-     @user = User.new
+     @users = User.new
    end
 
    def create_user
-     @user = User.new create_user_params
-     if @user.save
-       redirect_to user_path
+     @users = User.new create_user_params
+     if @users.save
+       redirect_to friends_users_path
      else
        render :new
      end
