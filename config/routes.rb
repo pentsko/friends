@@ -4,8 +4,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+
   resources :likes, only: [:create, :destroy]
   resources :friends, only: [:create, :edit]
+  get '/users', to: 'friends#index'
+  get '/users/new', to: 'friends#new'
+  post '/users/new', to: 'friends#create_user'
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'
   get 'posts/all_posts', to: 'posts#all_posts'
