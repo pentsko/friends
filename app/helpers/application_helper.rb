@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def date_mdY(date)
     if date.nil?
       ""
@@ -7,5 +6,4 @@ module ApplicationHelper
       date.strftime("%m-%d-%Y")
     end
   end
-
 end

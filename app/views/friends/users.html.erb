@@ -4,7 +4,8 @@
     <th>Name</th>
     <th>Email</th>
     <th>Author</th>
-  </tr>
+    <th colspan="3"></th>
+    </tr>
   </thead>
 
   <tbody>
@@ -15,6 +16,7 @@
       <td><%= form_for :friend, url: friends_path, method: :post do |form| %>
 			    <%= hidden_field_tag :friend_id, u.id %>
           <%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
+<!--          <td><%#= link_to "Destroy user", friends_users_path(@users), data: {method: :delete, confirm: "Are you sure? "}, class: "btn btn-success" %></td>-->
           <% end %>
 	<% end %>
     </tr>
@@ -22,5 +24,6 @@
 </table>
 <% if current_user.admin %>
 <td><%= link_to "Create user", users_new_path, class: "btn btn-success" %></td>
+
 <% end %>
 <%= paginate @users %>
