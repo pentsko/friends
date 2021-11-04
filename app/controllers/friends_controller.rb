@@ -15,8 +15,8 @@ class FriendsController < ApplicationController
   end
 
   def kill_user
-    @user = User.find_by id: params[:id]
-    @user.destroy
+    @users = current_user.firstname
+    @users.destroy
     redirect_to friends_users_path
   end
 
@@ -38,11 +38,6 @@ class FriendsController < ApplicationController
     redirect_to friends_list_path
   end
 
-  #Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  # def destroy
-  #     current_user.friends.destroy(User.find(params[:destroy_id]))
-  #     redirect_to friends_list_path
-  #   end
   def sign_up_params
     perams.require(:user).permit(:email, :password_confirmation, :firstname, :lastname, :date_of_birth)
   end
