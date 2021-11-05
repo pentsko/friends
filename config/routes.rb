@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/users', to: 'friends#index'
   get '/users/new', to: 'friends#new'
   post '/users/new', to: 'friends#create_user'
-  delete '/users/:id', to: 'friends#kill_user'
+  delete 'friends/users/:id', to: 'friends#kill_user'
   get 'friends/users', to: 'friends#users'
   get 'friends_list', to: 'friends#list_friends'
   delete 'friends/:destroy_id', to: 'friends#destroy'

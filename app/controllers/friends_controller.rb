@@ -15,7 +15,7 @@ class FriendsController < ApplicationController
   end
 
   def kill_user
-    @users = current_user.firstname
+    @users = User.find_by id: params[:id]
     @users.destroy
     redirect_to friends_users_path
   end
