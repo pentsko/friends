@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
+  serialize :avatars, JSON
   validates :email, presence: true, length: { minimum: 3 }
   validates :firstname, presence: true, length: { minimum: 3 }
   validates :lastname, presence: true, length: { minimum: 3 }

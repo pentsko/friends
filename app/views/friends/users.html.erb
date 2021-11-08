@@ -1,16 +1,18 @@
 <table class="table table-striped table-bordered table-hover">
   <thead class="table-dark">
   <tr>
+    <th>Foto</th>
     <th>Name</th>
     <th>Email</th>
     <th>Author</th>
-    <th colspan="3"></th>
+    <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
   <% @users.each do |u| %>
     <tr>
+      <td><%= image_tag u.avatar.url(:thumb), class: "img-show" if u.avatar? %></td>
       <td><%= u.firstname %> <%= u.lastname %></td>
       <td><%= link_to u.email %></td>
       <td><%= form_for :friend, url: friends_path, method: :post do |form| %>
@@ -22,8 +24,8 @@
     </tr>
   </tbody>
 </table>
-<% if current_user.admin %>
+<%# if current_user.admin %>
 <td><%= link_to "Create user", users_new_path, class: "btn btn-success" %></td>
 
-<% end %>
+<%# end %>
 <%= paginate @users %>

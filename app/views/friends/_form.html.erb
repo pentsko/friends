@@ -1,47 +1,52 @@
-<%= form_with(model: friend, url: edit_friends_path, local: true) do |form| %>
-  <% if friend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
-
-      <ul>
-      <% friend.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <div class="field form-group">
-
-    <%= form.text_field :first_name, id: :friend_first_name, class:"form-control", placeholder:"First_name" %>
-  </div>
-  <br>
-
-  <div class="field form-group">
-
-    <%= form.text_field :last_name, id: :friend_last_name, class:"form-control", placeholder:"Last_name" %>
-  </div>
-  <br>
-
-  <div class="field form-group">
-
-    <%= form.text_field :email, id: :friend_email, class:"form-control", placeholder:"Email" %>
-  </div>
-<br>
-
-     <div class="field form-group">
-    <%= form.text_field :facebook, id: :friend_facebook, class:"form-control", placeholder:"Facebook" %>
-  </div>
-  <br>
-
-  <div class="field form-group">
-    <%= form.number_field :user_id, id: :friend_user_id, class:"form-control", value: current_user.id %>
-  </div>
- <div><%= current_user.id %></div>
 
 
-<br>
-  <div class="actions">
-    <%= form.submit class:"btn btn-secondary" %>
-  </div>
-<% end %>
+
+
+
+<%#= form_with(model: friend, url: edit_friends_path, local: true) do |form| %>
+  <%# if friend.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>-->
+
+<!--      <ul>-->
+      <%# friend.errors.full_messages.each do |message| %>
+<!--        <li><%#= message %></li>-->
+      <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+<!--    <div class="field form-group">-->
+
+    <%#= form.text_field :first_name, id: :friend_first_name, class:"form-control", placeholder:"First_name" %>
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  <div class="field form-group">-->
+
+    <%#= form.text_field :last_name, id: :friend_last_name, class:"form-control", placeholder:"Last_name" %>
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  <div class="field form-group">-->
+
+    <%#= form.text_field :email, id: :friend_email, class:"form-control", placeholder:"Email" %>
+<!--  </div>-->
+<!--<br>-->
+
+<!--     <div class="field form-group">-->
+    <%#= form.text_field :facebook, id: :friend_facebook, class:"form-control", placeholder:"Facebook" %>
+<!--  </div>-->
+<!--  <br>-->
+
+<!--  <div class="field form-group">-->
+    <%#= form.number_field :user_id, id: :friend_user_id, class:"form-control", value: current_user.id %>
+<!--  </div>-->
+<!-- <div><%#= current_user.id %></div>-->
+
+
+<!--<br>-->
+<!--  <div class="actions">-->
+    <%#= form.submit class:"btn btn-secondary" %>
+<!--  </div>-->
+<%# end %>

@@ -1,16 +1,18 @@
 <table class="table table-dark table-striped">
 	  <thead class="table-dark">
     <tr>
+      <th>Avatar</th>
       <th>Name</th>
       <th>Email</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
 <% @friends.each do |friend| %>
 <tr>
-	<td><%= friend.name %></td>
+  <td><%= image_tag friend.avatar.url(:thumb), class: "img-show" if friend.avatar? %></td>
+	<td><%= friend.firstname + " " + friend.lastname %></td>
 	<td><%= friend.email %></td>
 
 	<td><%= link_to "Delete", "/friends/#{friend.id}", data: {method: :delete,confirm: "You really want this?"}, class: "btn btn-danger" %></td>

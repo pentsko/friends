@@ -1,6 +1,6 @@
 <h2>Edit Profile <% resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field form-group">
@@ -14,7 +14,7 @@
       <%= f.label :lastname %><br />
       <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname"  %>
     </div>
-
+    <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
   </div>
@@ -40,9 +40,14 @@
   <div class="field form-group">
     <%= f.label :current_password %> <br />
     <%= f.password_field :current_password, class:"form-control", autocomplete: "current-password", placeholder:"we need your current password to confirm your changes" %>
+  </div><br/>
+  <div>
+
+  <%= f.file_field :avatar, class:"form-control" %>
   </div>
 
-<br>
+
+  <br>
   <div class="actions">
     <%= f.submit "Update", class:"btn btn-secondary" %>
   </div>
