@@ -1,18 +1,25 @@
 <table class="table table-striped table-bordered table-hover">
   <thead class="table-dark">
   <tr>
+    <th>Foto</th>
     <th>Name</th>
     <th>Email</th>
     <th>Author</th>
-    <th colspan="3"></th>
+    <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
   <% @users.each do |u| %>
     <tr>
-      <td><%= u.firstname %> <%= u.lastname %></td>
-      <td><%= link_to u.email %></td>
+      <% if u.avatar.attached? %>
+      <td><%= image_tag u.avatar, width: "100px" %></td>
+        <% else %>
+      <td><%= u.avatar %></td>
+        <% end %>
+      <td>
+        <%= u.firstname %> <%= u.lastname %>
+<!--  <td><%= link_to u.email %></td>
       <td><%= form_for :friend, url: friends_path, method: :post do |form| %>
 			    <%= hidden_field_tag :friend_id, u.id %>
           <%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>

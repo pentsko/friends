@@ -6,8 +6,8 @@ class FriendsController < ApplicationController
   end
 
   def create_user
-    @users = User.new create_user_params
-    if @users.save
+    @user = User.new user_params
+    if @user.create
       redirect_to friends_users_path
     else
       render :new
@@ -44,7 +44,7 @@ class FriendsController < ApplicationController
 
   private
 
-  def create_user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :password_confirmation, :password)
+  def user_params
+    params.require(:user).permit(:email, :firstname, :lastname, :password, :avatar, :password_confirmation)
   end
 end
