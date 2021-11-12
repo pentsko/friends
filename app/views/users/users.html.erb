@@ -29,8 +29,8 @@
     </tr>
   </tbody>
 </table>
-<% if current_user.admin %>
+<%# if current_user.admin %>
 <td><%= link_to "Create user", users_new_path, class: "btn btn-success" %></td>
 
-<% end %>
+<%# end %>
 <%= paginate @users %>

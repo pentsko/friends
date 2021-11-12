@@ -3,8 +3,8 @@
   <li class="nav-item"><%= link_to 'All Posts', posts_all_posts_path, class:"nav-link" %></li>
   <% if user_signed_in? %>
     <li class="nav-item"><%= link_to 'My Posts', posts_path, class:"nav-link" %></li>
-    <li class="nav-item"><%= link_to 'Users', "/friends/users", class:"nav-link" %></li>
-    <li class="nav-item"><%= link_to 'My friends', "/friends_list", class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to 'Users', "/users/users", class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to 'My users', "/friends_list", class:"nav-link" %></li>
     <li class="nav-item"><%= link_to 'Edit', "/users/edit", class:"nav-link" %></li>
     <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link"%></li>
   <% else %>
