@@ -6,13 +6,11 @@ Rails.application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
   resources :friends, only: [:create, :edit]
-  # resources :users
-  get '/users', to: 'users#index'
-  get '/users/new', to: 'users#new'
-  post '/users/new', to: 'users#create_user'
-  delete 'users/users/:id', to: 'users#kill_user'
-  get 'users/users', to: 'users#users'
-  delete 'users/:destroy_id', to: 'users#destroy'
+  resources :users
+
+  # delete 'users/users/:id', to: 'users#kill_user'
+  # # get 'users/users', to: 'users#users'
+  # delete 'users/:destroy_id', to: 'users#destroy'
 
   get 'friends_list', to: 'users#list_friends'
 

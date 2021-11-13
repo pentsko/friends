@@ -1,0 +1,8 @@
+
+        <% if @user.avatar.attached? %>
+        <td>  <%= image_tag @user.avatar, width: "100px" %> </td>
+        <% end %>
+
+      <td><%= @user.firstname %> <%= @user.lastname %></td>
+      <td><%= @user.email %></td>
+

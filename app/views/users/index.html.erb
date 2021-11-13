@@ -18,8 +18,8 @@
       <td><%= u.avatar %></td>
         <% end %>
       <td>
-        <%= u.firstname %> <%= u.lastname %></td>
-        <td><%= link_to u.email %></td>
+        <%= link_to u.firstname + " " + u.lastname, user_path(u) %></td>
+        <td><%= u.email %></td>
       <td><%= form_for :friend, url: friends_path, method: :post do |form| %>
 			    <%= hidden_field_tag :friend_id, u.id %>
           <%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
@@ -30,7 +30,7 @@
   </tbody>
 </table>
 <%# if current_user.admin %>
-<td><%= link_to "Create user", users_new_path, class: "btn btn-success" %></td>
+<td><%= link_to "Create user", new_user_path, class: "btn btn-success" %></td>
 
 <%# end %>
 <%= paginate @users %>

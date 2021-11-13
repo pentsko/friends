@@ -1,28 +1,44 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :index]
 
-  def new
-    @users = User.new
+  def index
+    @users = User.all.page(params[:page])
+  #  show all users without current(doesn`t work) @users = User.all_except(current_user).page(params[:page])
   end
 
-  def create
-    @user = User.new user_params
-    if @user.create
-      redirect_to friends_users_path
+  def new
+    @user = User.new
+  end
+
+  def update
+    @user = User.find_by id: params[:id]
+    if @user.update user_params
+      redirect_to url: "/users"
     else
       render :new
     end
   end
 
-  def kill_user
-    @users = User.find_by id: params[:id]
-    @users.destroy
-    redirect_to friends_list_path
+  def show
+    @user = User.find_by id: params[:id]
   end
 
-  def users
-    @users = User.all_except(current_user).page(params[:page])
+  def create
+    @user = User.create user_params
+    if @user.save
+      redirect_to home_about_path
+    else
+      render :new
+    end
   end
+
+  def destroy
+    @users = User.find_by id: params[:id]
+    @users.destroy
+    redirect_to users_path
+  end
+
+
 
   # def create RENAME TO ADDING_TO_FRIENDS
   #   current_user.friends << User.find(params[:friend_id])
@@ -45,6 +61,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :password, :avatar, :password_confirmation)
+    params.require(:user).permit(:email, :firstname, :lastname, :password, :avatar, :password_confirmation, :date_of_birth)
   end
 end
