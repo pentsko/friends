@@ -12,7 +12,7 @@
     <% @posts.each do |p| %>
       <td><%= link_to p.title, p %></td>
       <td><%= p.body %></td>
-      <td><%= p.author %></td>
+      <td><%= p.inspect %></td>
       </tr>
     <% end %>
     </tbody>

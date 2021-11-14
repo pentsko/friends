@@ -1,7 +1,6 @@
 <h1>MY Posts</h1>
 
 <table class="table table-striped">
-
   <thead>
   <tr>
     <th scope="col"><%= "Name" %></th>
@@ -15,7 +14,7 @@
     <% @posts.each do |p| %>
       <td><%= p.title%></td>
       <td><%= p.body %></td>
-      <td><%= p.author %></td>
+      <td><%= p.user.firstname %></td>
 <td><%= link_to "Edit post", edit_post_path(p), class:"btn btn-secondary" %>
 <%= link_to "Delete post", post_path(p),  data: { method: :delete, confirm: "Are you sure to delete post?" }, class:"btn btn-danger" %></td>
     </tr>

@@ -15,7 +15,7 @@
       <% @posts.each do |p| %>
       <td><%= link_to p.title, p %></td>
       <td><%= p.body %></td>
-        <td><%= p.user_id %></td>
+        <td><%= p.user.firstname + " " + p.user.lastname %></td>
     </tr>
 
     <% end %>
