@@ -45,9 +45,9 @@ class UsersController < ApplicationController
   #   redirect_to friends_list_path
   # end
 
-  def list_friends
-    @friends = current_user.friends.page(params[:page])
-  end
+  # def list_friends
+  #   @friends = current_user.friends.page(params[:page])
+  # end
 
   # def destroy
   #   current_user.friends.destroy(User.find(params[:destroy_id]))

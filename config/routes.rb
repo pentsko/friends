@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   end
 
   resources :likes, only: [:create, :destroy]
-  resources :friends, only: [:index, :edit]
+  resources :friends, only: [:index, :edit, :destroy]
   post 'friends', to: 'friends#add'
   resources :users
 
   # delete 'users/users/:id', to: 'users#kill_user'
-  # # get 'users/users', to: 'users#users'
   # delete 'users/:destroy_id', to: 'users#destroy'
 
-  get 'friends_list', to: 'users#list_friends'
+  get 'friends_list', to: 'friends#list_friends'
 
   get 'posts/all_posts', to: 'posts#all_posts'
   get '/posts/:id', to: 'posts#show'
