@@ -14,6 +14,11 @@ class FriendsController < ApplicationController
     redirect_to users_path
   end
 
+  def destroy_friendship
+      current_user.friends.destroy(User.find(params[:destroy_id]))
+      redirect_to friends_list_path
+    end
+
   def list_friends
     @friends = current_user.friends.page(params[:page])
   end
