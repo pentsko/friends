@@ -9,15 +9,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  def update
-    @user = User.find_by id: params[:id]
-    if @user.update user_params
-      redirect_to url: "/users"
-    else
-      render :new
-    end
-  end
+  #
+  # def update
+  #   @user = User.find_by id: params[:id]
+  #   if @user.update user_params
+  #     redirect_to url: "/users"
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def show
     @user = User.find_by id: params[:id]
@@ -31,12 +31,12 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    @users = User.find_by id: params[:id]
-    @users.destroy
-    redirect_to users_path
-  end
+  #
+  # def destroy
+  #   @users = User.find_by id: params[:id]
+  #   @users.destroy
+  #   redirect_to users_path
+  # end
 
 
   def sign_up_params
