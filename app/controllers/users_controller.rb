@@ -32,11 +32,11 @@ class UsersController < ApplicationController
     end
   end
   #
-  # def destroy
-  #   @users = User.find_by id: params[:id]
-  #   @users.destroy
-  #   redirect_to users_path
-  # end
+  def destroy
+    @users = User.find_by id: params[:id]
+    @users.destroy
+    redirect_to users_path
+  end
 
 
   def sign_up_params

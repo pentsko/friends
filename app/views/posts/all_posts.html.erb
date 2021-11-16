@@ -15,7 +15,12 @@
       <% @posts.each do |p| %>
       <td><%= link_to p.title, p %></td>
       <td><%= p.body %></td>
-        <td><%= p.user.firstname + " " + p.user.lastname %></td>
+       <td> <% if p.user.nil? %>
+          <%= "author delete his page" %>
+          <% else %>
+        <%= p.user.firstname + " " + p.user.lastname %>
+          <% end %>
+       </td>
     </tr>
 
     <% end %>
