@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show]
 
   def index
-    @users = User.all.page(params[:page])
-  #  show all users without current(doesn`t work) @users = User.all_except(current_user).page(params[:page])
+    # @users = User.all.page(params[:page])
+
+   @users = User.all_except(current_user).page(params[:page])
+              # .all_except(current_user)
+                #
   end
 
   def new
@@ -23,14 +26,14 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
   end
 
-  # def create
-  #   @user = User.create user_params
-  #   if @user.save
-  #     redirect_to home_about_path
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    @user = User.create user_params
+    if @user.save
+      redirect_to home_about_path
+    else
+      render :new
+    end
+  end
   #
   def destroy
     @users = User.find_by id: params[:id]

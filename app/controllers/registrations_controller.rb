@@ -1,9 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
-  def new
-    build_resource(sign_up_params)
-    yield resource if block_given?
-    respond_with resource
-  end
+  # def new
+  #   build_resource(sign_up_params)
+  #   yield resource if block_given?
+  #   respond_with resource
+  # end
 
 
   def create
@@ -27,16 +27,18 @@ class RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
-
-  def update
-    super
-  end
-
-  def destroy
-    resource.destroy
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-    set_flash_message! :notice, :destroyed
-    yield resource if block_given?
-    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
-  end
+  #
+  # def update
+  #   super
+  # end
+  #
+  # def destroy
+  #   resource.destroy
+  #   if current_user.signed_in?
+  #   Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+  #   set_flash_message! :notice, :destroyed
+  #   yield resource if block_given?
+  #   respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  #   end
+  # end
 end

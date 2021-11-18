@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :posts, except: [:all_posts, :show] do
     resources :comments, only: [:create]
   end
 
+
+  # delete 'users/:id', to: 'registrations#destroy'
   resources :likes, only: [:create, :destroy]
   resources :friends, only: [:index, :edit, :destroy]
   post 'friends', to: 'friends#add'
   delete 'friends/:destroy_id', to: 'friends#destroy'
-  resources :users, except: [:create]
+  resources :users
+  # , except: [:create, :destroy]
 
   get 'friends_list', to: 'friends#list_friends'
 

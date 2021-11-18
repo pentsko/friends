@@ -6,7 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   scope :all_except,
-        ->(user) { where.not(id: user) && where.not(id: user.friends.map(&:id)) }
+        ->(user) { where.not(id: user) }
+
+  # && where.not(id: user.friends.map(&:id)) забрав цю частину коду і почало працювати.
+
 
   has_one_attached :avatar
   has_and_belongs_to_many :friends, class_name: 'User', join_table: :connections, association_foreign_key: :friend_id
