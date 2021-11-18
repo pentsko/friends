@@ -30,7 +30,7 @@
   </tbody>
 </table>
 <%# if current_user.admin %>
-<td><%= link_to "Create user", new_user_path, class: "btn btn-success" %></td>
+<td><%= link_to "Create user", new_user_registration_path, class: "btn btn-success" %></td>
 
 <%# end %>
 <%= paginate @users %>

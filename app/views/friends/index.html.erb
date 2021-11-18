@@ -1,4 +1,5 @@
 
 <% @friends.each do |friend| %>
-  <%= friend.first_name %>
+  <%= image_tag friend.avatar, width: "300px" %>
+  <%= friend.first_name + " " + friend.lastname %>
 <% end %>

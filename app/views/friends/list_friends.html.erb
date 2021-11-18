@@ -7,16 +7,13 @@
     <th colspan="3"></th>
   </tr>
   </thead>
-
   <tbody>
   <% @friends.each do |friend| %>
     <tr>
       <td><%= image_tag friend.avatar, width: "100px" %></td>
       <td><%= link_to friend.firstname + " " + friend.lastname, user_path(friend) %></td>
       <td><%= friend.email %></td>
-
       <td><%= link_to "Delete", "/friends/#{friend.id}", data: {method: :delete,confirm: "You really want this?"}, class: "btn btn-danger" %></td>
-
     </tr>
   <% end %>
   </tbody>
