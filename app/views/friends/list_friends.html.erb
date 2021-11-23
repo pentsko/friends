@@ -11,9 +11,9 @@
   <% @friends.each do |friend| %>
     <tr>
       <td><%= image_tag friend.avatar, width: "100px" %></td>
-      <td><%= link_to friend.firstname + " " + friend.lastname, user_path(friend) %></td>
+      <td><%= link_to friend.firstname + " " + friend.lastname, "/user/#{friend.id}" %></td>
       <td><%= friend.email %></td>
-      <td><%= link_to "Delete", "/friends/#{friend.id}", data: {method: :delete,confirm: "You really want this?"}, class: "btn btn-danger" %></td>
+      <td><%= link_to "Delete from friends", "/friends/#{friend.id}", data: {method: :delete, confirm: "You really want this?"}, class: "btn btn-danger" %></td>
     </tr>
   <% end %>
   </tbody>

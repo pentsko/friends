@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
   # && where.not(id: user.friends.map(&:id)) забрав цю частину коду і почало працювати.
 
-
   has_one_attached :avatar
   has_and_belongs_to_many :friends, class_name: 'User', join_table: :connections, association_foreign_key: :friend_id
   has_many :posts

@@ -1,0 +1,21 @@
+<table class="table table-dark table-sm">
+  <thead >
+  <tr>
+    <th>Foto</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date of birth</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% if @user.avatar.attached? %>
+    <td>  <%= image_tag @user.avatar, width: "100px" %> </td>
+  <% end %>
+
+  <td><%= @user.firstname %> <%= @user.lastname %></td>
+  <td><%= @user.email %></td>
+  <td><%= @user.date_of_birth %></td>
+  </tr>
+  </tbody>
+</table>
