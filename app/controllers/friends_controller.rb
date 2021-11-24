@@ -22,7 +22,7 @@ class FriendsController < ApplicationController
   def destroy
     @users = User.find_by id: params[:id]
     @users.destroy
-    redirect_to users_path
+    redirect_to list_users_path
   end
 
   #destroy friedship
