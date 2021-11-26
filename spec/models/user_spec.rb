@@ -22,6 +22,6 @@ RSpec.describe User, type: :model do
   # it "expect user date_of_birth" do
   #   user = User.create(date_of_birth: '05.03.1990')
   #
-  #   expect(user.date_of_birth).to eq '05.03.1990'
+  #   expect(user.date_of_birth).to eq "Mon, 05 Mar 1990"
   # end
 end
