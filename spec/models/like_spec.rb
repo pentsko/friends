@@ -13,8 +13,8 @@ RSpec.describe Like, type: :model do
     it 'expect not be valid without user and post' do
         like = Like.new
       expect(like).to_not be_valid
-      end
     end
+  end
 
   describe 'Associations' do
     it { should belong_to(:user) }

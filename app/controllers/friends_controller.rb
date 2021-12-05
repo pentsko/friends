@@ -38,4 +38,3 @@ class FriendsController < ApplicationController
     @users = User.all_except(current_user).page(params[:page])
   end
 end
-
