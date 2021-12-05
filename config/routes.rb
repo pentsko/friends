@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-
   # delete 'users/:id', to: 'registrations#destroy'
   resources :likes, only: [:create, :destroy]
   resources :friends, only: [:index, :edit, :destroy]

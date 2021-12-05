@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   prepend_before_action :require_no_authentication, only: [:cancel]
 
   def create
-   build_resource(sign_up_params)
+    build_resource(sign_up_params)
     resource.save
     yield resource if block_given?
     if resource.persisted?

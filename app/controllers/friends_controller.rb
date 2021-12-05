@@ -6,7 +6,6 @@ class FriendsController < ApplicationController
     @friends = current_user.friends
   end
 
-
 # current_user add user to friends
   def add
     current_user.friends << User.find(params[:friend_id])
