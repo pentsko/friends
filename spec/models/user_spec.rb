@@ -45,6 +45,11 @@ RSpec.describe User, type: :model do
         .class_name('User')
         .join_table(:connections)
     end
+
+    context 'scope tests' do
+
+    end
+    #
     # it 'is databse authenticable' do
     #   user = User.create(
     #     email: 'test@example.com',

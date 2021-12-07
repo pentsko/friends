@@ -40,11 +40,13 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
+
 end
 
 group :development do
@@ -58,3 +60,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'simplecov', require: false, group: :test
+

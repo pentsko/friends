@@ -3,6 +3,6 @@ FactoryBot.define do
     user
     title { 'Test title' }
     body { 'Some text for testing rpec tests' }
-    author { 'Michael' }
+    author factory: :user, lastname: "Taras"
   end
 end

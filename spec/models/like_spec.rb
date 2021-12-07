@@ -1,18 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  let!(:like) { build(:like) }
+let!(:like) { create(:like)}
 
-  context 'Validations' do
-      # it { should validate_uniqueness_of(:user_id).scoped_to(:post_id) }
+  describe  do
+    context 'Validations' do
 
-    it 'expect like to be valid' do
-      expect(like).to be_valid
-    end
+      it { should validate_uniqueness_of(:user_id).scoped_to(:post_id) }
 
-    it 'expect not be valid without user and post' do
+      it 'expect not be valid without user and post' do
         like = Like.new
-      expect(like).to_not be_valid
+        expect(like).to_not be_valid
+      end
     end
   end
 
