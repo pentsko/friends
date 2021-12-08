@@ -5,34 +5,28 @@ RSpec.describe "Posts", type: :request do
   let!(:post) { build(:post) }
 
   context "Get requests" do
-    describe "GET /post" do
+    describe "GET post" do
+
+      it "GET root/index" do
+        get root_path
+        expect(response.status).to eq(200)
+      end
 
       it "GET new post" do
         get new_post_path
-        expect(response.status).to eq(302)
+        expect(response).to redirect_to new_user_session_path
+        expect(response).to redirect_to user_session_path
+      end
+
+      it 'return all posts' do
+        FactoryBot.create(:post, title: 'First', body: 'text', author: 'Jamesis')
+        FactoryBot.create(:post, title: 'Second', body: 'second text', author: 'Vincert')
+
+        get posts_all_posts_path
+
+        expect(response).to have_http_status(:success)
+        expect(response.status).to eq(200)
       end
     end
   end
-
-  it 'return all posts' do
-   FactoryBot.create(:post, title: 'First', body: 'text', author: 'Jamesis')
-   FactoryBot.create(:post, title: 'Second', body: 'second text', author: 'Vincert')
-
-    get '/posts/all_posts'
-
-    expect(response).to have_http_status(:success)
-    expect(response.status).to eq(200)
-  end
-
-  # describe 'POST /posts' do
-  #   it 'create a new post' do
-  #
-  #     post '/posts'
-  #          # post: { title: 'Styding', body: 'Interesting it develop'}
-  #     FactoryBot.create(:post, title: 'Second', body: 'second text', author: 'Vincert')
-  #
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-#  Don't pass tests bocouse user must first log in....
 end

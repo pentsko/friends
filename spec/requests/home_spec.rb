@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Homes", type: :request do
+
   context "Get requests" do
     describe "Get root_path" do
       it "should render home template" do
