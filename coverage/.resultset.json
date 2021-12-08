@@ -1,17 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/taras/Desktop/training r-on-r/taras3/spec/requests/post_request_spec.rb": {
+      "/home/taras/Desktop/training r-on-r/taras3/spec/requests/home_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          4,
-          4,
           null,
           1,
           1,
-          null,
           1,
           1,
           1,
@@ -20,30 +17,11 @@
           1,
           1,
           1,
-          1,
-          null,
-          null,
           null,
           null,
           1,
           1,
           1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null,
@@ -838,8 +816,8 @@
           1,
           1,
           1,
-          4,
-          4,
+          1,
+          1,
           1,
           null,
           null
@@ -849,11 +827,11 @@
         "lines": [
           1,
           1,
-          12,
-          12,
-          9,
-          12,
-          12,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -1025,77 +1003,16 @@
           null
         ]
       },
-      "/home/taras/Desktop/training r-on-r/taras3/app/models/post.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/taras/Desktop/training r-on-r/taras3/app/controllers/posts_controller.rb": {
+      "/home/taras/Desktop/training r-on-r/taras3/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
           null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
           null,
           1,
           null,
+          null,
           1,
-          0,
           null,
           null
         ]
@@ -1120,22 +1037,8 @@
           null,
           null
         ]
-      },
-      "/home/taras/Desktop/training r-on-r/taras3/app/controllers/home_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1638939576
+    "timestamp": 1638940388
   }
 }
