@@ -1,18 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/taras/Desktop/training r-on-r/taras3/spec/requests/home_spec.rb": {
+      "/home/taras/Desktop/training r-on-r/taras3/spec/requests/post_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          4,
+          4,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
           null,
           1,
           1,
@@ -20,6 +18,17 @@
           null,
           null,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           1,
           null,
@@ -35,6 +44,7 @@
           1,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -65,6 +75,7 @@
           0,
           0,
           null,
+          1,
           1,
           1,
           null,
@@ -816,8 +827,8 @@
           1,
           1,
           1,
-          1,
-          1,
+          4,
+          4,
           1,
           null,
           null
@@ -827,11 +838,11 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          12,
+          12,
+          9,
+          12,
+          12,
           null,
           null
         ]
@@ -934,6 +945,26 @@
           null
         ]
       },
+      "/home/taras/Desktop/training r-on-r/taras3/spec/helpers/devise_request_spec_helpers.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/taras/Desktop/training r-on-r/taras3/spec/support/shoulda_matchers.rb": {
         "lines": [
           1,
@@ -1003,6 +1034,18 @@
           null
         ]
       },
+      "/home/taras/Desktop/training r-on-r/taras3/app/models/post.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/taras/Desktop/training r-on-r/taras3/app/controllers/home_controller.rb": {
         "lines": [
           1,
@@ -1037,8 +1080,71 @@
           null,
           null
         ]
+      },
+      "/home/taras/Desktop/training r-on-r/taras3/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1638941323
+    "timestamp": 1639027308
   }
 }
