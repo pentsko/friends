@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new post_params
     @post.user = current_user
     if @post.save
-      redirect_to posts_path, status: :created
+      redirect_to posts_path
     else
       render :new
     end
@@ -54,6 +54,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :author)
+    params.require(:post).permit(:title, :body)
   end
 end

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
-  let!(:user) { build(:user) }
-  let!(:post) { build(:post) }
+  let!(:user) { create(:user) }
+  let!(:post) { create(:post) }
 
   context "Get requests" do
     describe "GET post" do
@@ -26,6 +26,16 @@ RSpec.describe "Posts", type: :request do
 
         expect(response).to have_http_status(:success)
         expect(response.status).to eq(200)
+      end
+    end
+  end
+
+  context "POST requests" do
+    describe "POST /post" do
+      it "create a new post" do
+        sign_in user
+        # post "/posts"
+        # expect(response.status).to eq(200)
       end
     end
   end
