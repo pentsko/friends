@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   # delete 'users/:id', to: 'registrations#destroy'
   resources :likes, only: [:create, :destroy]
-  resources :friends, only: [:index, :edit, :destroy]
+  resources :friends, only: [:index, :edit]
   post 'friends', to: 'friends#add'
-  delete 'friends/:destroy_id', to: 'friends#destroy'
+  delete 'friends/:destroy_id', to: 'friends#destroy_friendship'
   get 'list_users', to: 'friends#list_users'
   get 'friends_list', to: 'friends#list_friends'
   get '/user/:id', to: 'friends#show'

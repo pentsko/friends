@@ -18,11 +18,11 @@ class FriendsController < ApplicationController
   end
 
   #destroy user
-  def destroy
-    @users = User.find_by id: params[:id]
-    @users.destroy
-    redirect_to list_users_path
-  end
+  # def destroy
+  #   @users = User.find_by id: params[:id]
+  #   @users.destroy
+  #   redirect_to list_users_path
+  # end
 
   #destroy friedship
   def destroy_friendship

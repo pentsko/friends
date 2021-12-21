@@ -1,9 +1,21 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :all_posts]
 
+  def index
+    @posts = Post.where(user_id: current_user.id)
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def show
+    @post = Post.find_by id: params[:id]
+  end
+
   def all_posts
     @posts = Post.all
-                 .page(params[:page])
+      .page(params[:page])
   end
 
   def edit
@@ -25,23 +37,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def index
-    @posts = Post.where(user_id: current_user.id)
-  end
-
-  def show
-    @post = Post.find_by id: params[:id]
-  end
-
-  def new
-    @post = Post.new
-  end
 
   def create
     @post = current_user.posts.new post_params
     @post.user = current_user
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, notice: 'Post was succesfully created!'
     else
       render :new
     end
