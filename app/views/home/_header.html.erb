@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <li class="nav-item"><%= link_to 'Main Page', root_path, class:"navbar-brand" %></li>
-  <li class="nav-item"><%= link_to 'All Posts', posts_all_posts_path, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to 'Main Page', root_path, class:"navbar-brand" %></li>
+    <li class="nav-item"><%= link_to 'All Posts', posts_all_posts_path, class:"nav-link" %></li>
   <% if user_signed_in? %>
     <li class="nav-item"><%= link_to 'My Posts', posts_path, class:"nav-link" %></li>
     <li class="nav-item"><%= link_to 'Users', list_users_path, class:"nav-link" %></li>
@@ -12,16 +12,18 @@
     <li class="nav-item"><%= link_to 'Contacts', home_contacts_path, class:"nav-link" %></li>
     <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class:"nav-link"%></li>
     <li class="nav-item"><%= link_to 'Log in', new_user_session_path, class:"nav-link"%></li>
-<% end %>
+  <% end %>
+
   <form class="form-inline my-2 my-lg-0" action="/search">
-    <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search">
+
+    <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search" aria-label="Search">
+
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-</div>
 </nav>
-<div>
-<% if current_user %>
-  <h4> It`s page of <%= current_user.firstname + " " + current_user.lastname%></h4>
-<% end %>
-</div>
+
+  <div>
+    <% if current_user %>
+      <h5><b> It`s page of <%= current_user.firstname + " " + current_user.lastname%></b></h5>
+    <% end %>
+  </div>

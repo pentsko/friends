@@ -2,10 +2,11 @@
 <%= form_with scope: :comment, url: post_comments_path(post) do |p| %>
   <div class="field form-group">
     <%= p.text_area :content, minlength: 2, placeholder: "Your comment", class:"form-control" %>
-  </div>
-  <br>
+  </div><br>
+
   <div class="actions">
     <%= p.submit "Submit post", class:"btn btn-outline-dark" %> |
     <%= link_to 'Back', posts_all_posts_path, class:"btn btn-dark" %>
   </div>
+
 <% end %>

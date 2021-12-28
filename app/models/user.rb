@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   scope :all_except,
         ->(user) { where.not(id: user) }
 
@@ -13,6 +14,5 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes
-
   paginates_per 5
 end

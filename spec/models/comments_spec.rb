@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
+
   let!(:comment) { build(:comment) }
 
   context 'Validations' do

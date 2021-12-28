@@ -4,25 +4,21 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  # delete 'users/:id', to: 'registrations#destroy'
   resources :likes, only: [:create, :destroy]
   resources :friends, only: [:index, :edit]
-  post 'friends', to: 'friends#add'
-  delete 'friends/:destroy_id', to: 'friends#destroy_friendship'
   get 'list_users', to: 'friends#list_users'
   get 'friends_list', to: 'friends#list_friends'
+  post 'friends', to: 'friends#add'
+  delete 'friends/:destroy_id', to: 'friends#destroy_friendship'
+  delete 'user/:id', to: 'friends#destroy_specific_user'
   get '/user/:id', to: 'friends#show'
 
   get 'posts/all_posts', to: 'posts#all_posts'
   get '/posts/:id', to: 'posts#show'
+  get 'search', to: 'posts#search'
 
   get 'home/about'
   get 'home/contacts'
-  get 'posts/all_posts', to: 'posts#all_posts'
-  get '/posts/:id', to: 'posts#show'
-  get 'search', to: 'posts#search'
 
   root 'home#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

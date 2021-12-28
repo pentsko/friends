@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   let!(:user) { build(:user) }
 
   context 'Validations' do
+
     it 'expect user to be valid' do
       expect(user).to be_valid
     end
@@ -34,6 +36,7 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
   end
+
   describe 'Associations' do
     it { should have_many(:posts) }
     it { should have_many(:comments) }
@@ -42,21 +45,8 @@ RSpec.describe User, type: :model do
     it { should have_one_attached(:avatar) }
     it do
       should have_and_belong_to_many(:friends)
-        .class_name('User')
-        .join_table(:connections)
+                                              .class_name('User')
+                                              .join_table(:connections)
     end
-
-    context 'scope tests' do
-
-    end
-    #
-    # it 'is databse authenticable' do
-    #   user = User.create(
-    #     email: 'test@example.com',
-    #     password: 'password123',
-    #     password_confirmation: 'password123'
-    #   )
-    #   expect(user.valid_password?('password123')).to be_truthy
-    # end
   end
 end
