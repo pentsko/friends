@@ -8,7 +8,7 @@ RSpec.describe "Comments", type: :request do
     it "create new comment" do
       sign_in user
       post "/posts/post_id/comments", params: { comment: { content: "new text" } }
-      expect(response.status).to eq(302)
+      expect(response).to have_http_status(:redirect)
       # expect(response).to reditect_to(post_path(ПОТРІБНО ПЕРЕДАТИ ПАРАМЕТР post_id СЮДИ))
     end
 

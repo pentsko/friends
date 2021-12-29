@@ -22,7 +22,7 @@
               <%= hidden_field_tag :friend_id, u.id %>
               <%= form.submit "Add friend", class: "btn btn-outline-dark" %></td>
         <% if current_user.admin %>
-          <td><%= link_to "Destroy user",  "/user/#{u.id}", data: {method: :delete,confirm: "Are you sure? "}, class: "btn btn-success" %></td>
+          <td><%= link_to "Destroy user", "/user/#{u.id}", data: {method: :delete,confirm: "Are you sure? "}, class: "btn btn-success" %></td>
           <% end %>
         <% end %>
       </tr>

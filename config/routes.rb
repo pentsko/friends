@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
+
   resources :posts, except: [:all_posts, :show] do
     resources :comments, only: [:create]
   end
