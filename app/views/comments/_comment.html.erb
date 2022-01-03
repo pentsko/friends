@@ -4,10 +4,12 @@
       <th scope="col">
         <% if comment.user.nil? %>
           <small><%= "User delete his page" %> || comment created at:
-                 <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small>
+                 <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+          </small>
         <% else %>
           <small>by <%= comment.user.firstname + " " + comment.user.lastname %> || created at:
-                    <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small>
+                    <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+          </small>
         <% end %>
       </th>
     </tr>
